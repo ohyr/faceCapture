@@ -1,0 +1,35 @@
+<% const styles = require('./style.scss'); %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="shortcut icon" href="https://www.blueprint-lab.com/favicon.ico">
+  <title>FaceShapeFinder</title>
+</head>
+
+<body>
+  <h1 style="text-align: center;">Face Shape Finder</h1>
+  <table style="text-align: center;width: 100%;">
+    <tr>
+      <td style="width: 50%;">
+        <div class="<%= styles.display %> js-display">
+        </div>
+        <h2 class="<%= styles.faceShape %> js-faceShape"></h2>
+      </td>
+      <td style="width: 50%;">
+        <div class="<%= styles.result %> js-result">
+          <img class="<%= styles.shotImg %> js-shotImg" src="https://www.blueprint-lab.com/favicon.ico" />
+        </div>
+        <div style="text-align: center;">
+          <p>Face to the Camera, Click the button to capture your Photo, And wait a few seconds.(4s ~ 5s)</p>
+          <button class="<%= styles.snapshot %> js-snapshot">Take a Photo & Find</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
