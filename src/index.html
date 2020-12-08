@@ -7,11 +7,13 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <link rel="shortcut icon" href="https://www.blueprint-lab.com/favicon.ico">
-  <title>FaceShapeFinder</title>
+  <!-- <title>FaceShapeFinder</title> -->
+  <title>SimilarCelebrityFinder</title>
 </head>
 
 <body>
-  <h1 style="text-align: center;">Face Shape Finder</h1>
+  <!-- <h1 style="text-align: center;">Face Shape Finder</h1> -->
+  <h1 style="text-align: center;">Similar Celebrity Finder</h1>
   <table style="text-align: center;width: 100%;">
     <tr>
       <td style="width: 50%;">
@@ -27,6 +29,18 @@
           <p>Face to the Camera, Click the button to capture your Photo, And wait a few seconds.(4s ~ 5s)</p>
           <button class="<%= styles.snapshot %> js-snapshot">Take a Photo & Find</button>
         </div>
+      </td>
+    </tr>
+  </table>
+  <hr>
+  <h2 style="text-align: center;">I recommend the glasses with the following design about your face analysis.</h2>
+  <table style="text-align: center;width: 100%;">
+    <tr>
+      <td style="width: 50%;">
+        <img class="<%= styles.recomImg1 %> js-recomImg1" src="" />
+      </td>
+      <td style="width: 50%;">
+        <img class="<%= styles.recomImg2 %> js-recomImg2" src="" />
       </td>
     </tr>
   </table>

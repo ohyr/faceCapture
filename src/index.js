@@ -57,13 +57,29 @@ const sendFace = function sendFaceFindFaceShape(imgBase64) {
   const faceShape = document.querySelector('.js-faceShape');
   faceShape.textContent = 'Loading...';
 
+  const recom1 = document.querySelector('.js-recomImg1');
+  const recom2 = document.querySelector('.js-recomImg2');
+  recom1.style.opacity = 0.2;
+  recom2.style.opacity = 0.2;
+
   const xhr = new XMLHttpRequest();
   xhr.onload = function (e) {
     const res = e.target.responseText;
     const jsonData = JSON.parse(res);
-    faceShape.textContent = jsonData.faceShape;
+
+    // faceShape.textContent = jsonData.faceShape;
+    // recom1.src = '../image/shape/' + jsonData.faceShape + '/' + jsonData.faceShape + 'G1.jpg'
+    // recom2.src = '../image/shape/' + jsonData.faceShape + '/' + jsonData.faceShape + 'G2.jpg'
+
+    faceShape.textContent = jsonData.celebName;
+    recom1.src = '../image/celeb/male/' + jsonData.celebName + '/' + jsonData.celebName + 'G1.jpg'
+    recom2.src = '../image/celeb/male/' + jsonData.celebName + '/' + jsonData.celebName + 'G2.jpg'
+
+    recom1.style.opacity = 1;
+    recom2.style.opacity = 1;
   }
-  xhr.open('POST', 'http://localhost:5000/face/analysis', true);
+  // xhr.open('POST', 'http://localhost:5000/face/analysis', true);
+  xhr.open('POST', 'http://localhost:5000/face/celeb', true);
   xhr.send(data);
 }
 
