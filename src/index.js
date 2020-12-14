@@ -41,7 +41,17 @@ const getWebcamStream = async function getRealtimeWebcamStream() {
   });
 };
 
+const checkGender = function checkGenderOfUser() {
+  if (document.querySelector('.js-female').checked) {
+    return 'female'
+  }
+
+  return 'male'
+}
+
 const sendFace = function sendFaceFindFaceShape(imgBase64) {
+  const gender = checkGender();
+
   const decodeImg = atob(imgBase64.split(',')[1]);
 
   const array = [];
@@ -50,7 +60,7 @@ const sendFace = function sendFaceFindFaceShape(imgBase64) {
   }
 
   const blob = new Blob([new Uint8Array(array)], { type: 'image/jpeg' });
-  const fname = 'user_' + new Date().getMilliseconds() + '.jpg';
+  const fname = gender + '_' + new Date().getMilliseconds() + '.jpg';
   const data = new FormData();
   data.append('file', blob, fname);
 
@@ -72,8 +82,8 @@ const sendFace = function sendFaceFindFaceShape(imgBase64) {
     // recom2.src = '../image/shape/' + jsonData.faceShape + '/' + jsonData.faceShape + 'G2.jpg'
 
     faceShape.textContent = jsonData.celebName;
-    recom1.src = '../image/celeb/male/' + jsonData.celebName + '/' + jsonData.celebName + 'G1.jpg'
-    recom2.src = '../image/celeb/male/' + jsonData.celebName + '/' + jsonData.celebName + 'G2.jpg'
+    recom1.src = '../image/celeb/' + gender + '/' + jsonData.celebName + '/' + jsonData.celebName + 'G1.jpg'
+    recom2.src = '../image/celeb/' + gender + '/' + jsonData.celebName + '/' + jsonData.celebName + 'G2.jpg'
 
     recom1.style.opacity = 1;
     recom2.style.opacity = 1;

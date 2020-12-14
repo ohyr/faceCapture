@@ -26,8 +26,11 @@
           <img class="<%= styles.shotImg %> js-shotImg" src="https://www.blueprint-lab.com/favicon.ico" />
         </div>
         <div style="text-align: center;">
-          <p>Face to the Camera, Click the button to capture your Photo, And wait a few seconds.(4s ~ 5s)</p>
-          <button class="<%= styles.snapshot %> js-snapshot">Take a Photo & Find</button>
+          <p>Face to the Camera, Click the button to capture your Photo, And wait a few seconds.</p>
+          <input type="radio" name="gender" class="<% styles.male %> js-male" checked="checked">Male
+          <input type="radio" name="gender" class="<% styles.female %> js-female">Female
+          <p><button class="<%= styles.snapshot %> js-snapshot">Take a Photo & Find</button>
+          <p>
         </div>
       </td>
     </tr>
